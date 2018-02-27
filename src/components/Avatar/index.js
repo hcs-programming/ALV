@@ -1,5 +1,5 @@
 import React from "react"
-import logo from "../../assets/logo.svg"
+import image from "../../assets/MissBrown.JPG"
 import "./styles.css"
 
 function Avatar() {
@@ -9,7 +9,7 @@ function Avatar() {
         <div className="avatar">
           <div className="sam" />
           <p className="A">A</p>
-          <img src="Miss Brown.JPG" />
+          <img src={image} />
         </div>
       </div>
       <p className="name">
