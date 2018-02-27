@@ -1,11 +1,11 @@
 import React from "react"
-import logo from "../../assets/logo.svg"
+import image from "../../assets/aeroplane.png"
 import "./styles.css"
 
 function FAB() {
   return (
     <div className="fab--btn">
-      <img className="fab--image" src="aeroplane2.png" />
+      <img className="fab--image" src={image} />
     </div>
   )
 }
