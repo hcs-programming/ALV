@@ -13,9 +13,9 @@
   width: 30px;
   margin-right: 3px;
 }
-.btn:hover {
+.fab--btn:hover {
   background-color: #03953d;
 }
-.btn:active {
+.fab--btn:active {
   background-color: #00c853;
 }
