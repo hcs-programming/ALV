@@ -1,0 +1,52 @@
+.avatar {
+  position: relative;
+  overflow: hidden;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar img {
+  vertical-align: middle;
+  width: 100%;
+}
+.sam {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ff5757;
+  opacity: 0.5;
+}
+.name {
+  font-size: 16px;
+  font-family: sans-serif;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+.subName {
+  color: grey;
+  font-family: sans-serif;
+  margin-top: 3px;
+}
+.avatar-boom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatar-border {
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+.A {
+  position: absolute;
+  margin: 0;
+  font-size: 48;
+  font-family: sans-serif;
+}
