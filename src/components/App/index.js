@@ -5,6 +5,7 @@ import "./styles.css"
 import Avatar from "../Avatar"
 import FAB from "../FAB"
 import TabBar from "../TabBar"
+import Grade from "../Grade"
 
 function App() {
   return (

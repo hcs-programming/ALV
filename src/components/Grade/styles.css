@@ -1,0 +1,18 @@
+.grade--container {
+  background-color: white;
+  height: 61px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.grade--font {
+  font-size: 24px;
+  flex: 1;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.grade--arrow {
+  height: 20px;
+  width: 20px;
+}
