@@ -2,10 +2,10 @@ import React from "react"
 import image from "../../assets/arrow.png"
 import "./styles.css"
 
-function Grade() {
+function Grade({ gradeName, onClick }) {
   return (
-    <div className="grade--container">
-      <p className="grade--font">Swag</p>
+    <div className="grade--container" onClick={onClick}>
+      <p className="grade--font">{gradeName}</p>
       <img className="grade--arrow" src={image} />
     </div>
   )

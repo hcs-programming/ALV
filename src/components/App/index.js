@@ -7,20 +7,21 @@ import FAB from "../FAB"
 import TabBar from "../TabBar"
 import Grade from "../Grade"
 
+function clickedThingy() {
+  console.log("I Got Clicked!")
+}
+
 function App() {
   return (
     <div className="App">
       <TabBar />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Welcome to React</h1>
-      </header>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
-
-      <Avatar />
-      <FAB />
+      <Grade gradeName="1st Grade" onClick={clickedThingy} />
+      <Grade gradeName="2nd Grade" />
+      <Grade gradeName="3rd Grade" onClick={clickedThingy} />
+      <Grade gradeName="4th Grade" />
+      <Grade gradeName="5th Grade" onClick={clickedThingy} />
+      <Grade gradeName="6th Grade" />
+      <Grade gradeName="7th Grade" />
     </div>
   )
 }
