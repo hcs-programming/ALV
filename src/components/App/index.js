@@ -22,6 +22,7 @@ function App() {
       <Grade gradeName="5th Grade" onClick={clickedThingy} />
       <Grade gradeName="6th Grade" />
       <Grade gradeName="7th Grade" />
+      <FAB edit={true} />
     </div>
   )
 }
