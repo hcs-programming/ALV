@@ -14,7 +14,7 @@ function clickedThingy() {
 function App() {
   return (
     <div className="App">
-      <TabBar />
+      <TabBar whichTab="Violations" />
       <Grade gradeName="1st Grade" onClick={clickedThingy} />
       <Grade gradeName="2nd Grade" />
       <Grade gradeName="3rd Grade" onClick={clickedThingy} />
