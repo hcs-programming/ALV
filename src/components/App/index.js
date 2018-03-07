@@ -17,6 +17,7 @@ let selectedTab = "Attendance"
 function App() {
   return (
     <div className="App">
+      <Avatar image="https://wallpaperbrowse.com/media/images/750814.jpg" name="Muss Brown" title="teacher"/>
       <TabBar whichTab={selectedTab} onClick={clickedTab} />
       <Grade gradeName="1st Grade" onClick={clickedThingy} />
       <Grade gradeName="2nd Grade" />

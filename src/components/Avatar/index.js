@@ -1,21 +1,20 @@
 import React from "react"
-import image from "../../assets/MissBrown.JPG"
 import "./styles.css"
 
-function Avatar() {
+function Avatar({character, name, title, image}) {
   return (
     <div className="avatar-boom">
       <div className="avatar-border">
         <div className="avatar">
-          <div className="sam" />
-          <p className="A">A</p>
+        { character && <div className="sam" />}
+          {character && <p className="A">{character}</p>}
           <img src={image} />
         </div>
       </div>
       <p className="name">
-        <b>Miss Brown</b>
+        <b>{name}</b>
       </p>
-      <p className="subName">Teacher</p>
+      <p className="subName">{title}</p>
     </div>
   )
 }
