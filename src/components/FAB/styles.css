@@ -19,3 +19,17 @@
 .fab--btn:active {
   background-color: #00c853;
 }
+.fab--edit {
+  background-color: #2f80ed;
+}
+.fab--editimage {
+  height: 35px;
+  width: 35px;
+  margin-bottom: 3px;
+}
+.fab--edit:hover {
+  background-color: #215faf;
+}
+.fab--edit:active {
+  background-color: #2f80ed;
+}
