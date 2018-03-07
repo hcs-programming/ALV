@@ -10,11 +10,14 @@ import Grade from "../Grade"
 function clickedThingy() {
   console.log("I Got Clicked!")
 }
-
+function clickedTab(tab) {
+  selectedTab = tab
+}
+let selectedTab = "Attendance"
 function App() {
   return (
     <div className="App">
-      <TabBar whichTab="Violations" />
+      <TabBar whichTab={selectedTab} onClick={clickedTab} />
       <Grade gradeName="1st Grade" onClick={clickedThingy} />
       <Grade gradeName="2nd Grade" />
       <Grade gradeName="3rd Grade" onClick={clickedThingy} />
