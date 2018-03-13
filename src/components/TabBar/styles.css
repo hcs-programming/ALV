@@ -1,4 +1,4 @@
-.rect {
+.tabbar--container {
   height: 100pt;
   display: flex;
   overflow: auto;
@@ -6,7 +6,7 @@
   box-shadow: 0px 0px 10px #000000;
 }
 
-.tabbar--container {
+.tabbar--tabs {
   border: 2px solid #ffffff;
   display: flex;
   height: 29pt;
@@ -14,7 +14,7 @@
   border-radius: 6px;
   margin: 50px 10px 10px;
 }
-.tabs {
+.tab {
   background-color: #4c5866;
   flex: 1;
   padding: 10px;

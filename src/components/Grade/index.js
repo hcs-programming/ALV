@@ -6,7 +6,7 @@ function Grade({ gradeName, onClick }) {
   return (
     <div className="grade--container" onClick={onClick}>
       <p className="grade--font">{gradeName}</p>
-      <img className="grade--arrow" src={image} />
+      <img className="grade--arrow" src={image} alt="arrow" />
     </div>
   )
 }

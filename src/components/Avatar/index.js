@@ -1,20 +1,20 @@
 import React from "react"
 import "./styles.css"
 
-function Avatar({character, name, title, image}) {
+function Avatar({ character, name, title, image }) {
   return (
-    <div className="avatar-boom">
+    <div className="avatar-container">
       <div className="avatar-border">
         <div className="avatar">
-        { character && <div className="sam" />}
-          {character && <p className="A">{character}</p>}
-          <img src={image} />
+          {character && <div className="avatar-red" />}
+          {character && <p className="avatar-character">{character}</p>}
+          <img src={image} alt="avatar" />
         </div>
       </div>
-      <p className="name">
+      <p className="avatar-name">
         <b>{name}</b>
       </p>
-      <p className="subName">{title}</p>
+      <p className="avatar-title">{title}</p>
     </div>
   )
 }

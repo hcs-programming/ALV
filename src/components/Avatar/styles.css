@@ -13,26 +13,26 @@
   vertical-align: middle;
   width: 100%;
 }
-.sam {
+.avatar-red {
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: #ff5757;
   opacity: 0.5;
 }
-.name {
+.avatar-name {
   font-size: 16px;
   font-family: sans-serif;
   margin-bottom: 3px;
   margin-top: 3px;
 }
 
-.subName {
+.avatar-title {
   color: grey;
   font-family: sans-serif;
   margin-top: 3px;
 }
-.avatar-boom {
+.avatar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +44,7 @@
   border-radius: 50%;
   border: 2px solid black;
 }
-.A {
+.avatar-character {
   position: absolute;
   margin: 0;
   font-size: 48;

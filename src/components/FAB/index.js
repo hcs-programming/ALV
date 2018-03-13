@@ -5,15 +5,17 @@ import "./styles.css"
 
 function FAB({ edit }) {
   let btnClasses = "fab--btn"
+  let imgClass = "fab--image"
   let btnImage = image
-  if (edit == true) {
+  if (edit === true) {
     btnImage = editimage
+    imgClass = "fab--editImage"
     btnClasses += " fab--edit"
   }
 
   return (
     <div className={btnClasses}>
-      <img className="fab--image" src={btnImage} />
+      <img className={imgClass} src={btnImage} alt="fab" />
     </div>
   )
 }
