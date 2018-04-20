@@ -3,7 +3,7 @@ import image from "../../assets/aeroplane.png"
 import editimage from "../../assets/pen.png"
 import "./styles.css"
 
-function FAB({ edit }) {
+function FAB({ edit, onClick }) {
   let btnClasses = "fab--btn"
   let imgClass = "fab--image"
   let btnImage = image
@@ -14,7 +14,7 @@ function FAB({ edit }) {
   }
 
   return (
-    <div className={btnClasses}>
+    <div className={btnClasses} onClick={onClick}>
       <img className={imgClass} src={btnImage} alt="fab" />
     </div>
   )

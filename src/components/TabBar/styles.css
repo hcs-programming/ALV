@@ -23,6 +23,7 @@
   color: #ffffff;
   border: 1px solid #ffffff;
   border-right: none;
+  cursor: pointer;
 }
 
 .selected {

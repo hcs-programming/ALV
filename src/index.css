@@ -3,3 +3,8 @@ body {
   padding: 0;
   font-family: "Nunito", sans-serif;
 }
+
+.myGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
