@@ -3,6 +3,9 @@ import React from "react"
 import FAB from "../components/FAB"
 import TabBar from "../components/TabBar"
 import AttendanceScreen from "./AttendanceScreen"
+import LunchScreen from "./LunchScreen"
+
+import beard from "../assets/beard.png"
 
 class MainScreen extends React.Component {
   state = {
@@ -11,26 +14,37 @@ class MainScreen extends React.Component {
       {
         image: "https://wallpaperbrowse.com/media/images/750814.jpg",
         name: "Sam",
-        type: "student",
-        attendance: null
+        title: "student",
+        attendance: null,
+        lunch: false
       },
       {
         image: "https://api.adorable.io/avatars/285/abott@adorable.png",
         name: "Kyle",
-        type: "student",
-        attendance: null
+        title: "student",
+        attendance: null,
+        lunch: false
       },
       {
         image: "https://api.adorable.io/avatars/285/scott@adorable.io.png",
         name: "Scott",
-        type: "teacher",
-        attendance: null
+        title: "teacher",
+        attendance: null,
+        lunch: false
       },
       {
         image: "https://api.adorable.io/avatars/285/caitlyn@adorable.io.png",
         name: "Caitlyn",
-        type: "teacher",
-        attendance: null
+        title: "teacher",
+        attendance: null,
+        lunch: false
+      }
+    ],
+    violations: [
+      {
+        image: beard,
+        name: "Violation",
+        title: "Beard"
       }
     ]
   }
@@ -49,6 +63,18 @@ class MainScreen extends React.Component {
     this.setState({ people: this.state.people })
   }
 
+  changeLunchStatus = person => {
+    const currentLunch = this.state.people[person].lunch
+
+    if (currentLunch == true) {
+      this.state.people[person].lunch = false
+    } else {
+      this.state.people[person].lunch = true
+    }
+
+    this.setState({ people: this.state.people })
+  }
+
   render() {
     const { tab, people } = this.state
 
@@ -58,10 +84,14 @@ class MainScreen extends React.Component {
           whichTab={tab}
           onClick={selected => this.setState({ tab: selected })}
         />
-        <AttendanceScreen
-          people={people}
-          changeAttendance={this.changeAttendanceStatus}
-        />
+        {tab === "Attendance" ? (
+          <AttendanceScreen
+            people={people}
+            changeAttendance={this.changeAttendanceStatus}
+          />
+        ) : (
+          <LunchScreen people={people} changeLunch={this.changeLunchStatus} />
+        )}
         <FAB />
       </div>
     )
