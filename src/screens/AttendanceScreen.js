@@ -19,6 +19,7 @@ class AttendanceScreen extends React.Component {
             title={person.title}
             character={person.attendance}
             onClick={() => changeAttendance(i)}
+            key={i}
           />
         ))}
       </div>

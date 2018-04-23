@@ -10,15 +10,24 @@ class App extends React.Component {
     chosenClass: null
   }
 
+  componentDidMount() {
+    const storedClass = localStorage.getItem("class")
+
+    if (storedClass != null) {
+      this.setState({ chosenClass: storedClass })
+    }
+  }
+
+  chooseAClass = className => {
+    this.setState({ chosenClass: className })
+    localStorage.setItem("class", className)
+  }
+
   render() {
     const { chosenClass } = this.state
 
     if (chosenClass === null) {
-      return (
-        <ChooseClassScreen
-          chooseClass={chosenClass => this.setState({ chosenClass })}
-        />
-      )
+      return <ChooseClassScreen chooseClass={this.chooseAClass} />
     } else {
       return <MainScreen />
     }
