@@ -1,5 +1,6 @@
 .tabbar--container {
   height: 100pt;
+  margin-bottom: 20pt;
   display: flex;
   overflow: auto;
   background-color: #4c5866;

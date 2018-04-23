@@ -12,7 +12,7 @@ class MainScreen extends React.Component {
         image: "https://wallpaperbrowse.com/media/images/750814.jpg",
         name: "Sam",
         type: "student",
-        attendance: "A"
+        attendance: null
       },
       {
         image: "https://api.adorable.io/avatars/285/abott@adorable.png",

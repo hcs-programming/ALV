@@ -3,8 +3,8 @@ import "./styles.css"
 
 function Avatar(props) {
   return (
-    <div className="avatar-container" onClick={props.onClick}>
-      <div className="avatar-border">
+    <div className="avatar-container">
+      <div className="avatar-border" onClick={props.onClick}>
         <div className="avatar">
           {props.character && <div className="avatar-red" />}
           {props.character && (
