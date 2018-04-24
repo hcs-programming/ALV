@@ -6,6 +6,11 @@ import AttendanceScreen from "./AttendanceScreen"
 import LunchScreen from "./LunchScreen"
 
 import beard from "../assets/beard.png"
+import belt from "../assets/belt.png"
+import shoe from "../assets/shoe.png"
+import shirt from "../assets/shirt.png"
+
+import ViolationScreen from "./ViolationScreen"
 
 class MainScreen extends React.Component {
   state = {
@@ -45,6 +50,21 @@ class MainScreen extends React.Component {
         image: beard,
         name: "Violation",
         title: "Beard"
+      },
+      {
+        image: belt,
+        name: "Violation",
+        title: "Belt"
+      },
+      {
+        image: shoe,
+        name: "Violation",
+        title: "Shoes"
+      },
+      {
+        image: shirt,
+        name: "Violation",
+        title: "Uniform"
       }
     ]
   }
@@ -76,7 +96,7 @@ class MainScreen extends React.Component {
   }
 
   render() {
-    const { tab, people } = this.state
+    const { tab, people, violations } = this.state
 
     return (
       <div>
@@ -84,14 +104,16 @@ class MainScreen extends React.Component {
           whichTab={tab}
           onClick={selected => this.setState({ tab: selected })}
         />
-        {tab === "Attendance" ? (
+        {tab === "Attendance" && (
           <AttendanceScreen
             people={people}
             changeAttendance={this.changeAttendanceStatus}
           />
-        ) : (
+        )}
+        {tab === "Lunch" && (
           <LunchScreen people={people} changeLunch={this.changeLunchStatus} />
         )}
+        {tab === "Violations" && <ViolationScreen violations={violations} />}
         <FAB />
       </div>
     )
