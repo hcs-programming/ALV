@@ -4,13 +4,12 @@ import FAB from "../components/FAB"
 import TabBar from "../components/TabBar"
 import AttendanceScreen from "./AttendanceScreen"
 import LunchScreen from "./LunchScreen"
+import ViolationScreen from "./ViolationScreen"
 
 import beard from "../assets/beard.png"
 import belt from "../assets/belt.png"
 import shoe from "../assets/shoe.png"
 import shirt from "../assets/shirt.png"
-
-import ViolationScreen from "./ViolationScreen"
 
 class MainScreen extends React.Component {
   state = {
@@ -114,6 +113,7 @@ class MainScreen extends React.Component {
           <LunchScreen people={people} changeLunch={this.changeLunchStatus} />
         )}
         {tab === "Violations" && <ViolationScreen violations={violations} />}
+
         <FAB />
       </div>
     )
