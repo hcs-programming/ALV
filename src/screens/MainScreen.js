@@ -70,28 +70,30 @@ class MainScreen extends React.Component {
 
   changeAttendanceStatus = person => {
     const currentAttendance = this.state.people[person].attendance
+    const newPeople = this.state.people
 
-    if (currentAttendance == null) {
-      this.state.people[person].attendance = "T"
-    } else if (currentAttendance == "A") {
-      this.state.people[person].attendance = null
-    } else if (currentAttendance == "T") {
-      this.state.people[person].attendance = "A"
+    if (currentAttendance === null) {
+      newPeople[person].attendance = "T"
+    } else if (currentAttendance === "A") {
+      newPeople[person].attendance = null
+    } else if (currentAttendance === "T") {
+      newPeople[person].attendance = "A"
     }
 
-    this.setState({ people: this.state.people })
+    this.setState({ people: newPeople })
   }
 
   changeLunchStatus = person => {
     const currentLunch = this.state.people[person].lunch
+    const newPeople = this.state.people
 
-    if (currentLunch == true) {
-      this.state.people[person].lunch = false
+    if (currentLunch === true) {
+      newPeople[person].lunch = false
     } else {
-      this.state.people[person].lunch = true
+      newPeople[person].lunch = true
     }
 
-    this.setState({ people: this.state.people })
+    this.setState({ people: newPeople })
   }
 
   render() {

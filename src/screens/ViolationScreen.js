@@ -2,8 +2,6 @@ import React from "react"
 import { Modal } from "semantic-ui-react"
 
 import Avatar from "../components/Avatar"
-import FAB from "../components/FAB"
-import TabBar from "../components/TabBar"
 
 class ViolationScreen extends React.Component {
   state = {
