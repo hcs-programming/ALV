@@ -1,5 +1,6 @@
 import React from "react"
 import "./styles.css"
+import check from "../../assets/check.png"
 
 function Avatar(props) {
   return (
@@ -7,7 +8,12 @@ function Avatar(props) {
       <div className="avatar-border" onClick={props.onClick}>
         <div className="avatar">
           {props.character && <div className="avatar-red" />}
-          {props.checked && <div className="avatar-green" />}
+          {props.checked && (
+            <div className="avatar-green">
+              <img src={check} alt="avatar" />
+            </div>
+          )}
+
           {props.character && (
             <p className="avatar-character">{props.character}</p>
           )}
