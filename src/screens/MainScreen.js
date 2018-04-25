@@ -112,7 +112,9 @@ class MainScreen extends React.Component {
         {tab === "Lunch" && (
           <LunchScreen people={people} changeLunch={this.changeLunchStatus} />
         )}
-        {tab === "Violations" && <ViolationScreen violations={violations} />}
+        {tab === "Violations" && (
+          <ViolationScreen violations={violations} people={people} />
+        )}
 
         <FAB />
       </div>
