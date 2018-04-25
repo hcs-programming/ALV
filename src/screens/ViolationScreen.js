@@ -32,16 +32,18 @@ class ViolationScreen extends React.Component {
           />
         ))}
         <Modal open={isOpen} onClose={this.closeModal} dimmer="blurring">
-          <div className="myGrid">
-            {people.map((person, i) => (
-              <Avatar
-                key={i}
-                image={person.image}
-                name={person.name}
-                title={person.title}
-              />
-            ))}
-          </div>
+          <Modal.Content>
+            <div className="myGrid">
+              {people.map((person, i) => (
+                <Avatar
+                  key={i}
+                  image={person.image}
+                  name={person.name}
+                  title={person.title}
+                />
+              ))}
+            </div>
+          </Modal.Content>
         </Modal>
       </div>
     )
