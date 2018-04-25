@@ -17,7 +17,7 @@ class LunchScreen extends React.Component {
             image={person.image}
             name={person.name}
             title={person.title}
-            character={person.lunch}
+            checked={person.lunch}
             onClick={() => changeLunch(i)}
             key={i}
           />

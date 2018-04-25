@@ -7,6 +7,7 @@ function Avatar(props) {
       <div className="avatar-border" onClick={props.onClick}>
         <div className="avatar">
           {props.character && <div className="avatar-red" />}
+          {props.checked && <div className="avatar-green" />}
           {props.character && (
             <p className="avatar-character">{props.character}</p>
           )}
