@@ -1,7 +1,6 @@
 import React from "react"
 import check from "../../assets/check.png"
 import "./styles.css"
-import check from "../../assets/check.png"
 
 function Avatar(props) {
   return (
