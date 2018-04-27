@@ -20,28 +20,44 @@ class MainScreen extends React.Component {
         name: "Sam",
         title: "student",
         attendance: null,
-        lunch: false
+        lunch: false,
+        beard: false,
+        belt: false,
+        shoes: false,
+        uniform: false
       },
       {
         image: "https://api.adorable.io/avatars/285/abott@adorable.png",
         name: "Kyle",
         title: "student",
         attendance: null,
-        lunch: false
+        lunch: false,
+        beard: false,
+        belt: false,
+        shoes: false,
+        uniform: false
       },
       {
         image: "https://api.adorable.io/avatars/285/scott@adorable.io.png",
         name: "Scott",
         title: "teacher",
         attendance: null,
-        lunch: false
+        lunch: false,
+        beard: false,
+        belt: false,
+        shoes: false,
+        uniform: false
       },
       {
         image: "https://api.adorable.io/avatars/285/caitlyn@adorable.io.png",
         name: "Caitlyn",
         title: "teacher",
         attendance: null,
-        lunch: false
+        lunch: false,
+        beard: false,
+        belt: false,
+        shoes: false,
+        uniform: false
       }
     ],
     violations: [
@@ -96,6 +112,13 @@ class MainScreen extends React.Component {
     this.setState({ people: newPeople })
   }
 
+  changeViolationStatus = (person, violation) => {
+    const newPeople = this.state.people
+    newPeople[person][violation] = !newPeople[person][violation]
+
+    this.setState({ people: newPeople })
+  }
+
   render() {
     const { tab, people, violations } = this.state
 
@@ -115,7 +138,11 @@ class MainScreen extends React.Component {
           <LunchScreen people={people} changeLunch={this.changeLunchStatus} />
         )}
         {tab === "Violations" && (
-          <ViolationScreen violations={violations} people={people} />
+          <ViolationScreen
+            violations={violations}
+            people={people}
+            changeViolation={this.changeViolationStatus}
+          />
         )}
 
         <FAB />

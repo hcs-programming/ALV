@@ -5,19 +5,19 @@ import Avatar from "../components/Avatar"
 
 class ViolationScreen extends React.Component {
   state = {
-    isOpen: false
+    isOpen: ""
   }
 
-  openModal = () => {
-    this.setState({ isOpen: true })
+  openModal = type => {
+    this.setState({ isOpen: type })
   }
 
   closeModal = () => {
-    this.setState({ isOpen: false })
+    this.setState({ isOpen: "" })
   }
 
   render() {
-    const { violations, people } = this.props
+    const { violations, people, changeViolation } = this.props
     const { isOpen } = this.state
 
     return (
@@ -27,11 +27,12 @@ class ViolationScreen extends React.Component {
             image={violation.image}
             name={violation.name}
             title={violation.title}
-            onClick={this.openModal}
+            onClick={() => this.openModal(violation.title)}
             key={i}
           />
         ))}
         <Modal open={isOpen} onClose={this.closeModal} dimmer="blurring">
+          <Modal.Header>{isOpen}</Modal.Header>
           <Modal.Content>
             <div className="myGrid">
               {people.map((person, i) => (
@@ -40,6 +41,8 @@ class ViolationScreen extends React.Component {
                   image={person.image}
                   name={person.name}
                   title={person.title}
+                  checked={person[isOpen.toLowerCase()]}
+                  onClick={() => changeViolation(i, isOpen.toLowerCase())}
                 />
               ))}
             </div>
