@@ -1,8 +1,6 @@
 import React from "react"
 
 import Avatar from "../components/Avatar"
-import FAB from "../components/FAB"
-import TabBar from "../components/TabBar"
 
 class AttendanceScreen extends React.Component {
   state = {}
