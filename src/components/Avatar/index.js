@@ -8,16 +8,12 @@ function Avatar(props) {
       <div className="avatar-border" onClick={props.onClick}>
         <div className="avatar">
           {props.character && <div className="avatar-red" />}
-          {props.checked && (
-            <div className="avatar-green">
-              <img src={check} alt="avatar" />
-            </div>
-          )}
-
           {props.character && (
             <p className="avatar-character">{props.character}</p>
           )}
-          <img src={props.image} alt="avatar" />
+          {props.checked && <div className="avatar-green" />}
+          {props.checked && <img src={check} className="avatar-character" />}
+          <img src={props.image} />
         </div>
       </div>
       <p className="avatar-name">
