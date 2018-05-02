@@ -12,54 +12,16 @@ import shoe from "../assets/shoe.png"
 import shirt from "../assets/shirt.png"
 
 class MainScreen extends React.Component {
+  componentDidMount() {
+    fetch("http://app.apache.ga/api/students/11")
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ people: data.data })
+      })
+  }
   state = {
     tab: "Attendance",
-    people: [
-      {
-        image: "https://wallpaperbrowse.com/media/images/750814.jpg",
-        name: "Sam",
-        title: "student",
-        attendance: null,
-        lunch: false,
-        beard: false,
-        belt: false,
-        shoes: false,
-        uniform: false
-      },
-      {
-        image: "https://api.adorable.io/avatars/285/abott@adorable.png",
-        name: "Kyle",
-        title: "student",
-        attendance: null,
-        lunch: false,
-        beard: false,
-        belt: false,
-        shoes: false,
-        uniform: false
-      },
-      {
-        image: "https://api.adorable.io/avatars/285/scott@adorable.io.png",
-        name: "Scott",
-        title: "teacher",
-        attendance: null,
-        lunch: false,
-        beard: false,
-        belt: false,
-        shoes: false,
-        uniform: false
-      },
-      {
-        image: "https://api.adorable.io/avatars/285/caitlyn@adorable.io.png",
-        name: "Caitlyn",
-        title: "teacher",
-        attendance: null,
-        lunch: false,
-        beard: false,
-        belt: false,
-        shoes: false,
-        uniform: false
-      }
-    ],
+    people: [],
     violations: [
       {
         image: beard,
