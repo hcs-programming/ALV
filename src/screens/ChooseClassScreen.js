@@ -7,6 +7,8 @@ function ChooseClassScreen({ chooseClass }) {
   return (
     <div>
       <Header title="Choose Class" />
+      <Grade gradeName="Kindergarten 4" onClick={() => chooseClass("K4")} />
+      <Grade gradeName="Kindergarten" onClick={() => chooseClass("K5")} />
       <Grade gradeName="1st Grade" onClick={() => chooseClass("1")} />
       <Grade gradeName="2nd Grade" onClick={() => chooseClass("2")} />
       <Grade gradeName="3rd Grade" onClick={() => chooseClass("3")} />

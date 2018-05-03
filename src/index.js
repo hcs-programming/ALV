@@ -23,13 +23,18 @@ class App extends React.Component {
     localStorage.setItem("class", className)
   }
 
+  clearClass = () => {
+    this.setState({ chosenClass: null })
+    localStorage.removeItem("class")
+  }
+
   render() {
     const { chosenClass } = this.state
 
     if (chosenClass === null) {
       return <ChooseClassScreen chooseClass={this.chooseAClass} />
     } else {
-      return <MainScreen />
+      return <MainScreen clearClass={this.clearClass} />
     }
   }
 }

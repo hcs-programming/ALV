@@ -13,7 +13,9 @@ import shirt from "../assets/shirt.png"
 
 class MainScreen extends React.Component {
   componentDidMount() {
-    fetch("http://app.apache.ga/api/students/11")
+    const chosenClass = localStorage.getItem("class")
+
+    fetch(`http://app.apache.ga/api/students/${chosenClass}`)
       .then(response => response.json())
       .then(data => {
         this.setState({ people: data.data })
@@ -107,7 +109,7 @@ class MainScreen extends React.Component {
           />
         )}
 
-        <FAB />
+        <FAB onClick={this.props.clearClass} />
       </div>
     )
   }

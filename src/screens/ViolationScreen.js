@@ -22,15 +22,26 @@ class ViolationScreen extends React.Component {
 
     return (
       <div className="myGrid">
-        {violations.map((violation, i) => (
-          <Avatar
-            image={violation.image}
-            name={violation.name}
-            title={violation.title}
-            onClick={() => this.openModal(violation.title)}
-            key={i}
-          />
-        ))}
+        {violations.map((violation, i) => {
+          const violationType = violation.title.toLowerCase()
+          const count = people.reduce((sum, person) => {
+            if (person[violationType] === true) {
+              return sum + 1
+            }
+            return 0
+          })
+
+          return (
+            <Avatar
+              image={violation.image}
+              name={violation.name}
+              title={violation.title}
+              onClick={() => this.openModal(violation.title)}
+              key={i}
+              character={count}
+            />
+          )
+        })}
         <Modal open={isOpen} onClose={this.closeModal} dimmer="blurring">
           <Modal.Header>{isOpen}</Modal.Header>
           <Modal.Content>
