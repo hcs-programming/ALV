@@ -21,6 +21,7 @@ class MainScreen extends React.Component {
         this.setState({ people: data.data })
       })
   }
+
   state = {
     tab: "Attendance",
     people: [],
@@ -46,6 +47,17 @@ class MainScreen extends React.Component {
         title: "Uniform"
       }
     ]
+  }
+
+  save = () => {
+    const chosenClass = localStorage.getItem("class")
+    const { people } = this.state
+
+    fetch(`http://app.apache.ga/api/students/${chosenClass}`, {
+      method: "post",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(people)
+    })
   }
 
   changeAttendanceStatus = person => {
@@ -109,7 +121,7 @@ class MainScreen extends React.Component {
           />
         )}
 
-        <FAB onClick={this.props.clearClass} />
+        <FAB onClick={this.save} />
       </div>
     )
   }

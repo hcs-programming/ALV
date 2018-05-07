@@ -24,12 +24,14 @@ class ViolationScreen extends React.Component {
       <div className="myGrid">
         {violations.map((violation, i) => {
           const violationType = violation.title.toLowerCase()
-          const count = people.reduce((sum, person) => {
+          let count = people.reduce((sum, person) => {
             if (person[violationType] === true) {
               return sum + 1
             }
-            return 0
-          })
+            return sum
+          }, 0)
+          console.log(count)
+          count = count > 0 ? count : null
 
           return (
             <Avatar
